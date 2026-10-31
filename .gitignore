@@ -1,0 +1,27 @@
+# Teacher-provided server artifacts
+server/node_modules/
+server/db_file.db
+
+# Frontend artifacts
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+frontend/coverage/
+frontend/test-results/
+frontend/playwright-report/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+~$*.docx
+
+# Submission archives
+*.zip
