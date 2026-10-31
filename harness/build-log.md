@@ -44,6 +44,45 @@ Known blocker: Final human browser review and personal-information confirmation
 
 ---
 
+### 2026-10-31 — Requirements Audit and Interface Refinement
+
+**Status**: Complete
+
+#### Audit performed
+
+- Compared the implementation against every requirement module A–R.
+- Inspected Dashboard, Tasks, Activity History, Reports, and Settings in the running browser.
+- Inspected the responsive navigation and Tasks view at exactly 500 px.
+- Rechecked the desktop layout at 1440 × 900.
+- Checked captured browser warning/error logs; none were present.
+
+#### Corrections and refinements
+
+- Corrected undersized Dashboard panels so both columns use available desktop width.
+- Changed new History intervals to appear within the selected observation range.
+- Allowed explicitly closing an ongoing interval by entering an end time.
+- Prevented accidental task switching while History drafts are unsaved.
+- Added Escape handling for mobile navigation.
+- Added modal focus containment and focus restoration.
+- Added `Project-docs/Agent-instructions/REQUIREMENTS_AUDIT.md` with A–R traceability.
+
+#### Verification
+
+- `npm test`: 2 files, 7 tests passed.
+- `npm run lint`: passed.
+- `npm run build`: passed; 19 modules transformed.
+- Exact 500 px visual inspection: no page-level horizontal scrolling observed.
+- Desktop visual inspection: corrected Dashboard panels use their columns.
+- Browser console: no captured warnings or errors.
+
+#### Remaining human-owned submission items
+
+- Confirm the exact author name and honest total working hours.
+- Perform the final Firefox/Chrome keyboard and browser accessibility-tool pass.
+- Package and extract-test the final ZIP.
+
+---
+
 ### 2026-10-31 — Phase 00: Workspace and Frontend Foundation
 
 **Status**: Complete
