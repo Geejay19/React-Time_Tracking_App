@@ -20,7 +20,7 @@ This roadmap sequences implementation of the React task activity tracker. Detail
 | 09 | Settings and alternative mode | Complete |
 | 10 | Dashboard | Complete |
 | 11 | Accessibility and responsive verification | Complete |
-| 12 | Submission audit | Ready for human submission review |
+| 12 | Submission audit | Complete |
 
 Allowed statuses: Not started, In progress, Blocked, Ready for review, Complete. A phase becomes Complete only after its acceptance criteria and verification evidence are satisfied.
 

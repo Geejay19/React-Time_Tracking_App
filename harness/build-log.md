@@ -6,9 +6,39 @@ This file records implementation progress and observed evidence. Plans belong in
 
 ## Project status
 
-Current phase: Phase 12 ready for human submission review  
-Last completed phase: Phase 11  
-Known blocker: Final human browser review and personal-information confirmation
+Current phase: Complete  
+Last completed phase: Phase 12  
+Known blocker: None
+
+---
+
+### 2026-10-31 — Final Compliance Fix and Submission Verification
+
+**Status**: Complete
+
+#### Final requirement fix
+
+- Ongoing intervals are now included in Activity History overlap comparisons.
+- Every involved ongoing/manual interval is identified.
+- Added a regression test for the exact Module N edge case.
+
+#### Final source verification
+
+- `npm test`: 2 files, 8 tests passed.
+- `npm run lint`: passed.
+- `npm run build`: passed.
+
+#### Submission archive
+
+- Created `Activity-Time-Tracker-Submission.zip` from an explicit frontend allowlist.
+- ZIP size: 36,296 bytes at creation.
+- Confirmed project files exist directly at archive root.
+- Confirmed no `node_modules`, `dist`, `.git`, server, or database content exists in the archive.
+- Extracted the archive into a clean temporary directory.
+- Extracted `npm ci`: 103 packages installed; 0 reported vulnerabilities.
+- Extracted tests: 8 passed.
+- Extracted lint: passed.
+- Extracted production build: passed.
 
 ---
 

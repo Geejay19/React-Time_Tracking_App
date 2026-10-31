@@ -66,7 +66,7 @@ function History({ tasks, stamps, now, saveAll }) {
   const [taskId,setTaskId]=useState(tasks[0]?.id??''),[range,setRange]=useState({start:toInputLocal(startOfToday(now)),end:toInputLocal(now)})
   const original=useMemo(()=>taskId?buildIntervals(stamps,Number(taskId)):[],[stamps,taskId]),[drafts,setDrafts]=useState(original),[dirty,setDirty]=useState(false),[saving,setSaving]=useState(false),[message,setMessage]=useState('')
   useEffect(()=>{if(!dirty)setDrafts(original)},[original,dirty])
-  const overlaps=findOverlaps(drafts.filter((x)=>x.end)), visible=drafts.filter((x)=>overlapsRange(x,range.start,range.end,now))
+  const overlaps=findOverlaps(drafts,now), visible=drafts.filter((x)=>overlapsRange(x,range.start,range.end,now))
   const change=(key,field,value)=>{setDrafts((items)=>items.map((x)=>x.key===key?{...x,[field]:formatApiLocal(value),ongoing:false}:x));setDirty(true)}
   const add=()=>{const end=new Date(range.end),start=new Date(Math.max(new Date(range.start).getTime(),end.getTime()-3600000));setDrafts((items)=>[...items,{key:`new-${crypto.randomUUID()}`,taskId:Number(taskId),startTimestampId:null,endTimestampId:null,start:formatApiLocal(start),end:formatApiLocal(end),ongoing:false}]);setDirty(true)}
   const save=async()=>{setSaving(true);setMessage('');try{await saveAll(Number(taskId),original,drafts);setDirty(false);setMessage('Activity changes saved.')}catch(e){setMessage(e.message)}finally{setSaving(false)}}

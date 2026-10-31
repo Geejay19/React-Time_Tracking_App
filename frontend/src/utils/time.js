@@ -157,16 +157,16 @@ export function overlapsRange(interval, start, end, now = new Date()) {
   return clippedDuration(interval, start, end, now) > 0
 }
 
-export function findOverlaps(intervals) {
+export function findOverlaps(intervals, now = new Date()) {
   const problematic = new Set()
   intervals.forEach((current, index) => {
     const currentStart = parseLocal(current.start)
-    const currentEnd = parseLocal(current.end)
+    const currentEnd = current.end ? parseLocal(current.end) : now
     if (!currentStart || !currentEnd || currentEnd <= currentStart) problematic.add(current.key)
     intervals.slice(index + 1).forEach((other) => {
       const otherStart = parseLocal(other.start)
-      const otherEnd = parseLocal(other.end)
-      if (currentStart < otherEnd && otherStart < currentEnd) {
+      const otherEnd = other.end ? parseLocal(other.end) : now
+      if (currentStart && currentEnd && otherStart && otherEnd && currentStart < otherEnd && otherStart < currentEnd) {
         problematic.add(current.key)
         problematic.add(other.key)
       }

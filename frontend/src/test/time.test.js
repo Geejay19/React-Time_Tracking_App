@@ -45,4 +45,14 @@ describe('local time calculations', () => {
     ]
     expect([...findOverlaps(intervals)].sort()).toEqual(['a', 'b'])
   })
+
+  it('marks both a manual interval and an overlapping ongoing interval', () => {
+    const intervals = [
+      { key: 'ongoing', start: '2026-10-31 10:00:00.000', end: null, ongoing: true },
+      { key: 'manual', start: '2026-10-31 10:30:00.000', end: '2026-10-31 11:00:00.000' },
+    ]
+    const now = new Date(2026, 9, 31, 12, 0, 0)
+
+    expect([...findOverlaps(intervals, now)].sort()).toEqual(['manual', 'ongoing'])
+  })
 })
