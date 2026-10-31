@@ -61,4 +61,4 @@ Automated tests cover:
 
 ## Final declaration notes
 
-The declared author is `Geeth` and estimated work is `3` hours. The submission archive contains the frontend files directly at its root, excludes forbidden development artifacts, and passed `npm ci`, 8 tests, lint, and production build after extraction.
+The declared author is `Geethika Jayasekara` and estimated work is `3` hours. The submission archive contains the frontend files directly at its root, excludes forbidden development artifacts, and passed `npm ci`, 8 tests, lint, and production build after extraction.

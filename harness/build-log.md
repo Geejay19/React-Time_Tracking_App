@@ -66,7 +66,7 @@ Known blocker: None
 
 #### Important review notes
 
-- The provisional About author is `Geeth`; the human must correct it if necessary.
+- The About author was initially provisional and was later confirmed as `Geethika Jayasekara`.
 - Estimated hours in `implemented.md` is provisionally `3`; the human must replace it with their honest total if different.
 - The teacher server dependency installation reported 4 vulnerabilities. No audit fix was applied because modifying teacher-provided dependencies is outside scope.
 - Full Firefox/Chrome keyboard and browser accessibility-tool inspection should be performed by the human before packaging.
