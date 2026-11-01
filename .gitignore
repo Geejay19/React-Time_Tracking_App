@@ -25,3 +25,10 @@ Thumbs.db
 
 # Submission archives
 *.zip
+
+# Local planning, course documentation, and agent workflow files
+AGENTS.md
+PLANS.md
+Project-docs/
+harness/
+frontend/implemented.md
